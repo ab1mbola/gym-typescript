@@ -1,0 +1,78 @@
+@use "./variables" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+
+@mixin font-dmSans {
+  font-family: 'DM Sans', sans-serif;
+}
+
+@mixin font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+@mixin img-containerFullWidth {
+  width: 100%;
+  // height: 100%;
+  // position: relative;
+  // overflow: hidden;
+
+  img {
+    width: 100%;
+    // height: 100%;
+    // object-fit: cover;
+    // object-position: center;
+  }
+}
+
+@mixin selected-link($selectedPage) {
+  &.selected {
+    color: $selectedPage;
+  }
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin breakpoint($point) {
+  @if $point == phone {
+    @media (min-width: $phone) {
+      @content;
+    }
+  }
+  @else if $point == tablet {
+    @media (min-width: $tablet) {
+      @content;
+    }
+  }
+  @else if $point == desktop {
+    @media (min-width: $desktop) {
+      @content;
+    }
+  }
+}
+
+// @mixin responsive($breakpoint) {
+//   @media screen and (max-width: $breakpoint) {
+//     @content;
+//   }
+// }

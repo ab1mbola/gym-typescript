@@ -1,0 +1,103 @@
+@use "../../styles/base/variables" as *;
+@use "../../styles/base/mixins" as *;
+
+.icons {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.benefits__container {
+  // background: white;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100%;
+  width: 83.333333%;
+  padding: 5rem 0;
+
+  &__header {
+    @include breakpoint(desktop) {
+      margin: 1.25rem 0;
+      width: 60%;
+    }
+    p {
+      margin: 1.25rem 0;
+    }
+  }
+
+  &__benefits {
+    @include breakpoint(desktop) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-top: 1.25rem;
+    }
+  }
+
+  .graphic__description {
+    margin-top: 4rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+
+    @include breakpoint(desktop) {
+      margin-top: 7rem;
+      display: flex;
+    }
+
+    .graphic {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    &__body {
+      &__title {
+        position: relative;
+
+        .descriptionTitleContainer {
+          &::before {
+            content: url("/assets/AbstractWaves.png");
+            position: absolute;
+            top: -5rem;
+            left: -5rem;
+            z-index: -1;
+
+            .descriptionTitle {
+              .htext {
+                span {
+                  color: $primary-500;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &__content {
+        &:nth-child(1) {
+          margin-top: 1.25rem;
+        }
+
+        &:nth-child(2) {
+          margin-bottom: 1.25rem;
+        }
+      }
+
+      .descriptionButtonContainer{
+        position: relative;
+        margin-top: 4rem;
+
+        .descriptionButton {
+          &::before {
+            content: url('/assets/Sparkles.png');
+            position: absolute;
+            bottom: -5rem;
+            right: -5rem;
+            z-index: -1;
+          }
+
+        }
+      }
+    }
+  }
+}

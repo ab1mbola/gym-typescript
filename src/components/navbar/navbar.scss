@@ -1,0 +1,132 @@
+@use "../../styles/base/mixins" as *;
+// @use '../../styles/base/resets';
+@use "../../styles/base/variables" as *;
+
+.navbarContainer {
+  @include flex-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 30;
+  top: 0;
+  position: fixed;
+  // padding-top: 6px;
+  // padding-bottom: 6px;
+  padding: 1.5rem 0;
+
+  &.isTopOfPage {
+    // background: transparent;
+    // box-shadow: none;
+  }
+
+  &.notTopOfPage {
+    background: $primary-100;
+    filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1))
+      drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+  }
+
+  .navbarWrapper {
+    @include flex-between;
+    margin-left: auto;
+    margin-right: auto;
+    width: 83.333333%;
+
+    .innerContainer {
+      @include flex-between;
+      width: 100%;
+      gap: 4rem;
+
+      // .logo {
+      // }
+
+      .rightSide {
+        @include flex-between;
+        width: 100%;
+
+        .innerLeftSide {
+          @include flex-between;
+          gap: 2rem;
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          height: 100%;
+
+          // @include breakpoint(phone) {
+          //   margin-left: 33%;
+          //   @include flex-column;
+          //   gap: 2.5rem;
+          //   font-size: 1.5rem;
+          //   line-height: 2rem;
+          //   transition: all 0.3s ease;
+          // }
+        }
+
+        .innerRightSide {
+          @include flex-between;
+          gap: 2rem;
+          // cursor: pointer;
+          // font-size: 14px;
+          // line-height: 20px;
+        }
+      }
+
+      .mobile-btn {
+        border-radius: 100%;
+        background: $secondary-500;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        width: fit-content;
+
+        .hamBurgerMenuIcon {
+          width: 1.5rem;
+          height: 1.5rem;
+          color: white;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.mobileMenu {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  width: 300px;
+  height: 100%;
+  background: $primary-100;
+  filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+    drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+
+  &__closeIconWrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 2rem 3.5rem;
+
+    .closeButton {
+      border: none;
+      outline: none;
+      background: transparent;
+
+      &__Icon {
+        height: 1.5rem;
+        width: 1.5rem;
+        color: $gray-400;
+      }
+    }
+  }
+
+  .innerLeftSide {
+    @include breakpoint(phone) {
+      margin-left: 33%;
+      @include flex-column;
+      gap: 2.5rem;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      transition: all 0.3s ease;
+    }
+  }
+}

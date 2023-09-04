@@ -1,0 +1,129 @@
+@use "../../styles/base/mixins" as *;
+@use "../../styles/base/variables" as *;
+
+.contactUs {
+  margin: 0 auto;
+  width: 83.333333%;
+  padding-top: 6rem;
+  padding-bottom: 8rem;
+
+  &__header {
+    @include breakpoint(desktop) {
+      width: 60%;
+    }
+
+    .htext {
+      span {
+        color: $primary-500;
+      }
+    }
+    > p {
+      margin: 1.25rem 0;
+    }
+  }
+
+  .fiContainer {
+    margin-top: 2.5rem;
+    justify-content: space-between;
+    gap: 2rem;
+    @include breakpoint(desktop) {
+      display: flex;
+    }
+
+    .formContainer {
+      margin: 2.5rem 0;
+      flex-basis: 60%;
+      @include breakpoint(desktop) {
+        margin-top: 0px;
+      }
+
+      form {
+        .formInput {
+          width: 100%;
+          border-radius: 0.5rem;
+          border: transparent;
+          background: $primary-300;
+          padding: 0.75rem 1.25rem;
+          margin-bottom: 1.25rem;
+          color: white;
+          @include font-dmSans;
+
+          &::placeholder {
+            color: white;
+          }
+
+          &:focus {
+            border: 2px solid black;
+          }
+        }
+
+        .errorText {
+          margin-top: 0.25rem;
+          color: red;
+          opacity: 0;
+          transition: opacity 0.3s ease, transform 0.3s ease;
+
+          &.show {
+            opacity: 1;
+            animation: shake 0.5s ease;
+          }
+        }
+
+        .formButton {
+          margin-top: 1.25rem;
+          border-radius: 0.5rem;
+          background: $secondary-500;
+          padding: 0.75rem 5rem;
+          border: none;
+          transition: all 500ms ease-in-out;
+
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+
+    .imageContainer {
+      position: relative;
+      flex-basis: 40%;
+      margin-top: 4rem;
+      @include breakpoint(desktop) {
+        margin-top: 0px;
+      }
+
+      .evolveImage {
+        @include breakpoint(desktop) {
+          &::before {
+            content: url("../../assets/EvolveText.png");
+            width: 100%;
+            position: absolute;
+            bottom: -5rem;
+            left: -20rem;
+            z-index: -1;
+          }
+        }
+
+        > img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@keyframes shake {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(-10px);
+  }
+  60% {
+    transform: translateX(-5px);
+  }
+}

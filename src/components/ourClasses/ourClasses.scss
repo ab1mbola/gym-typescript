@@ -1,0 +1,72 @@
+@use "../../styles/base/mixins" as *;
+@use "../../styles/base/variables" as *;
+
+.ourclasses {
+  background: $primary-100;
+  width: 100%;
+  padding: 10rem 0;
+
+  &__container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 83.333333%;
+
+    &__content {
+      @include breakpoint(desktop) {
+        width: 60%;
+      }
+
+      .description {
+        padding: 1.25rem 0;
+      }
+    }
+  }
+
+  .carousel {
+    height: 353px;
+    margin-top: 2.5rem;
+    // width: 1440px;
+    // width: 100%;
+    // overflow-x: auto;
+    // overflow-y: hidden;
+
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    // gap: 1rem;
+
+    
+
+    &:hover .carouselContent {
+      animation-play-state: paused;
+    }
+
+    .carouselContent {
+      // width: 2800px;
+      // white-space: nowrap;
+
+      display: flex;
+      justify-content: space-between;
+      
+      // flex-shrink: 0;
+      // min-width: 100%;
+      // gap: 1rem;
+      // animation: scroll 10s linear infinite;
+      animation-duration: 15s;
+      animation-iteration-count: infinite;
+      animation-direction: linear;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      animation-name: scroll;
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-2940px);
+  }
+}

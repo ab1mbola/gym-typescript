@@ -1,0 +1,9 @@
+@use "../../styles/base/mixins" as *;
+
+.htext {
+  @include font-montserrat;
+  flex-basis: 60%;
+  font-weight: 700;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}

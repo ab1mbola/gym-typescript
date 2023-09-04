@@ -1,0 +1,64 @@
+@use "../../styles/base/mixins" as *;
+@use "../../styles/base/variables" as *;
+
+.footer{
+  background: $primary-100;
+  padding: 4rem 0;
+
+  &__container{
+    justify-content: center;
+    margin: 0 auto;
+    width: 83.333333%;
+    gap: 4rem;
+    @include breakpoint (desktop) {
+      display: flex;
+    }
+
+    .footerItems {
+
+      &:nth-child(1) {
+        margin-top: 4rem;
+        flex-basis: 50%;
+        @include breakpoint (desktop) {
+          margin-top: 0;
+        }
+
+        > p {
+          margin: 1.25rem 0;
+        }
+      }
+
+      &:nth-child(2) {
+        margin-top: 4rem;
+        flex-basis: 25%;
+        @include breakpoint (desktop) {
+          margin-top: 0;
+        }
+
+        h4 {
+          font-weight: 700;
+        }
+
+        p {
+          margin: 1.25rem 0;
+        }
+      }
+
+      &:nth-child(3) {
+        margin-top: 4rem;
+        flex-basis: 25%;
+        @include breakpoint (desktop) {
+          margin-top: 0;
+        }
+        
+        h4 {
+          font-weight: 700;
+        }
+
+        p {
+          margin: 1.25rem 0;
+        }
+      }
+    }
+  }
+}

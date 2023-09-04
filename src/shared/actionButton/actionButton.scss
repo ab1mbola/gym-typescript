@@ -1,0 +1,19 @@
+@use "../../styles/base/mixins" as *;
+@use "../../styles/base/variables" as *;
+
+.actionButton {
+  border-radius: 6px;
+  background: $secondary-500;
+  color: $gray-500;
+  text-decoration: none;
+  padding: 0.5rem 2.5rem;
+
+  &:hover {
+    background: $primary-500;
+    color: white;
+    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+      0 8px 16px -8px rgba(0, 0, 0, 0.3);
+    transform: translateY(-1.5px);
+    transition: all 0.5s ease-in-out;
+  }
+}

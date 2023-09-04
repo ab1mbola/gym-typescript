@@ -1,0 +1,131 @@
+@use "../../styles/base/variables" as *;
+@use "../../styles/base/mixins" as *;
+
+.homepage {
+  gap: 4rem;
+  background: $gray-20;
+  padding: 2.5rem 0;
+  @include breakpoint(desktop) {
+    height: 100%;
+    padding-bottom: 0;
+    // padding-top: 2.5rem;
+  }
+
+  &__container {
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 83.333333%;
+    @include breakpoint(desktop) {
+      display: flex;
+      height: 83.333333%;
+    }
+
+    // @include breakpoint(tablet) {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   width: 83.333333%;
+    // }
+
+    &__header {
+      z-index: 10;
+      margin-top: 8rem;
+      @include breakpoint(desktop) {
+        flex-basis: 60%;
+      }
+      .headings {
+        opacity: 1;
+        @include breakpoint(desktop) {
+          margin-top: -5rem;
+        }
+
+        &__image {
+          position: relative;
+
+          &__container {
+            // position: relative;
+
+            &::before {
+              // content: url('/assets/EvolveText.png');
+              position: absolute;
+              top: -5rem;
+              left: -5rem;
+              z-index: -1;
+
+              @include breakpoint(desktop) {
+                content: url("/assets/EvolveText.png");
+              }
+            }
+          }
+        }
+
+        .description {
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          margin-top: 2rem;
+        }
+      }
+
+      .actions {
+        opacity: 1;
+        transform: none;
+        gap: 2rem;
+        display: flex;
+        align-items: center;
+        margin-top: 2rem;
+        
+        .link {
+          font-size: 0.875rem;
+          line-height: 1.25rem;
+          font-weight: 700;
+          color: $primary-500;
+          text-decoration-line: underline;
+
+          &:hover {
+            color: $secondary-500;
+            transition: all .5s ease-in-out;
+          }
+        }
+      }
+
+    }
+    .heroImage {
+      display: flex;
+      justify-content: center;
+      flex-basis: 60%;
+      @include breakpoint(desktop) {
+        z-index: 10;
+        margin-left: 10rem;
+        margin-top: 4rem;
+        justify-content: end;
+      }
+
+      img {
+        // width: 100%;
+        // width: 366px;
+        // height: 400px;
+      }
+    }
+  }
+
+  &__sponsors {
+    padding: 2.5rem 0;
+    background: $primary-100;
+    width: 100%;
+    height: 150px;
+
+    .sponsorsContainer {
+      width: 83.333333%;
+      margin-left: auto;
+      margin-right: auto;
+
+      .sponsorsWrapper {
+        gap: 2rem;
+        @include flex-between;
+        width: 60%;
+      }
+    }
+  }
+}
